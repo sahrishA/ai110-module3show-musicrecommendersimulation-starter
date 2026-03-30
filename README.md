@@ -75,6 +75,12 @@ Use this section to document the experiments you ran. For example:
 - How did your system behave for different types of users
 
 ---
+Loaded 18 songs from data/songs.csv and generated top recommendations based on genre, mood, and energy. For the Chill Lofi profile, Midnight Coding (4.46) and Library Rain (4.40) ranked highest due to matching genre, mood, and close energy values. Lower-ranked songs like Coffee Shop Stories (1.40) only matched energy, showing how missing features reduce scores.
+Increased the weight of energy (2×) while reducing the importance of genre (½). This shifted rankings toward songs with closer energy values. For example, in the High-Energy Pop profile, Rooftop Lights improved in ranking despite not matching genre perfectly, while songs like Storm Runner and Deep Jungle appeared due to strong energy alignment alone.
+Tested three profiles: High-Energy Pop, Chill Lofi, and Deep Intense Rock. Across all profiles, top recommendations consistently matched the core features (genre + mood + energy). For example, Sunrise City (Pop) and Storm Runner (Rock) ranked highest in their respective profiles due to strong alignment across all features.
+Observed cross-genre recommendations when energy was prioritized. Songs like Gym Hero and Deep Jungle appeared in multiple profiles because their energy values closely matched targets, even when genre alignment was weak.
+Compared multiple scoring runs and found consistent top results (e.g., Midnight Coding, Library Rain, Storm Runner), but score differences increased when weights were adjusted. This shows the model is stable but sensitive to weight tuning.
+Noted dataset limitations. With only 18 songs, the system produced reasonable recommendations, but diversity was limited and the same songs frequently repeated across different profiles.
 
 ## Limitations and Risks
 
